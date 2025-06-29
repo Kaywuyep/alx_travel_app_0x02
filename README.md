@@ -1,26 +1,43 @@
-## A duplicate of the alx travel app 
+## A duplicate of the ALX Travel App
 
-### Database Modeling and Data Seeding in Django
-mandatory
-Objective
+---
 
+### ✅ Phase 1: Database Modeling and Data Seeding in Django
+
+**Objective:**  
 Define the database models, create serializers for API data representation, and implement a management command to seed the database.
 
-Instructions
+---
 
-Duplicate Project:
+#### 📝 Instructions
 
-Duplicate the project alx_travel_app to alx_travel_app_0x00
-Create Models:
+##### 🔁 Duplicate Project
 
-In listings/models.py, define Listing, Booking, and Review models based on the provided structure.
-Each model should have appropriate fields, relationships, and constraints.
-Set Up Serializers:
+```bash
+cp -r alx_travel_app alx_travel_app_0x00
+# implement seeders 
+python manage.py seed
+```
 
-Create serializers in listings/serializers.py for Listing and Booking models.
-Implement Seeders:
+###  Phase 2: Chapa Payment Integration
+**Objective:**
+Integrate the Chapa API for secure online payments tied to user bookings.
+create the models and views in the listings app
 
-Create a management command in listings/management/commands/seed.py to populate the database with sample listings data.
-Run Seed Command `python manage.py seed`:
+### ✅ Phase 3: Celery Setup (with Redis on Windows via WSL)
+🛠 Install Requirements
+``` bash
+pip install celery redis
+```
 
-Test the seeder by running the command to populate the database with sample data.
+### ✅ Running Redis on Windows via WSL
+🐧 Step 1: Open Ubuntu (WSL)
+```bash
+sudo apt update
+sudo apt install redis-server
+# ▶️ Step 2: Start Redis
+sudo service redis-server start
+# 🧪 Step 3: Test Redis
+redis-cli ping
+# PONG
+```
