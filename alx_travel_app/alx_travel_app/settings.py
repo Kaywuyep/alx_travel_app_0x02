@@ -117,6 +117,15 @@ DATABASES = {
 #     }
 # }
 
+# settings.py
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'wuyepkate@gmail.com'
+EMAIL_HOST_PASSWORD = 'your_password'
+DEFAULT_FROM_EMAIL = 'no-reply@alxtravel.com'
+
 # integrate a payment platform
 CHAPA_SECRET_KEY = os.getenv('CHAPA_SECRET_KEY')
 
@@ -168,6 +177,7 @@ REST_FRAMEWORK = {
     ]
 } # this is to allow all users to access the API
 
-CELERY_BROKER_URL = 'redis://localhost:6379/0'
+# CELERY_BROKER_URL = 'redis://localhost:6379/0'
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
+CELERY_BROKER_URL = 'amqp://localhost'  # or use Docker hostname if running in container
